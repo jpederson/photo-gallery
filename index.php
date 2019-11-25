@@ -121,9 +121,9 @@ if ( !empty( $photos ) ) {
 			// only generate a thumbnail if one doesn't already exist, logging if in cli
 			if ( !file_exists( $thumb ) ) {
 				make_thumb( $path, $thumb, '300' );
-				if ( is_cli() ) print "Thumbnail created: " . $thumb . ".\n";
+				if ( is_cli() ) print "Thumbnail created: " . str_replace( './', '', $thumb ) . ".\n";
 			} else {
-				if ( is_cli() ) print "Thumbnail exists: " . $thumb . ".\n";
+				if ( is_cli() ) print "Thumbnail exists: " . str_replace( './', '', $thumb ) . ".\n";
 			}
 
 			// if we're in a browser, output the code for the photo tile, with the thumbnail as a background.
