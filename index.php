@@ -1,6 +1,13 @@
 <?php
+/***********************************************************************
+  PHP Photo Gallery
+  --------------------
+  Generates a photo gallery from a folder of images. Detects if it's
+  being used in CLI or browser, and either outputs a log, or the gallery
+  itself, generating thumbnails as it goes.	
+ ***********************************************************************/
 
-// a function to make a thumbnail
+// small function to generate thumbnails
 function make_thumb( $src, $dest, $desired_width ) {
 
 	/* read the source image */
@@ -29,6 +36,7 @@ function is_cli() {
 }
 
 
+// if we're in a browser, output some header HTML and basic styles.
 if ( !is_cli() ) {
 ?>
 <!DOCTYPE html>
@@ -90,7 +98,9 @@ if ( !is_cli() ) {
 $photos = scandir( '.' );
 
 
+// begin logging if in cli
 if ( is_cli() ) print "Generating thumbnails...\n";
+
 
 // if there are photos in the same directory as this script
 if ( !empty( $photos ) ) {
@@ -105,7 +115,10 @@ if ( !empty( $photos ) ) {
 			// only output tiles for image files.
 			if ( in_array( $ext, array( 'png', 'jpg', 'jpeg' ) ) && substr( $photo, 0, 1 ) != '_' ) { 
 
+			// set the destination for the thumbnail file
 			$thumb = './_' . $photo;
+
+			// only generate a thumbnail if one doesn't already exist, logging if in cli
 			if ( !file_exists( $thumb ) ) {
 				make_thumb( $path, $thumb, '300' );
 				if ( is_cli() ) print "Thumbnail created: " . $thumb . ".\n";
@@ -113,6 +126,7 @@ if ( !empty( $photos ) ) {
 				if ( is_cli() ) print "Thumbnail exists: " . $thumb . ".\n";
 			}
 
+			// if we're in a browser, output the code for the photo tile, with the thumbnail as a background.
 			if ( !is_cli() ) {
 				?><a href="<?php print $photo ?>" class="photo" style="background-image: url(_<?php print $photo ?>);"></a><?php
 			}
@@ -120,6 +134,7 @@ if ( !empty( $photos ) ) {
 	}
 }
 
+// if we're in the browser, output footer html
 if ( !is_cli() ) {
 ?>
 <div style="clear: both"></div>
@@ -128,5 +143,3 @@ if ( !is_cli() ) {
 <?php
 }
 
-
-?>
