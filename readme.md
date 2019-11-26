@@ -1,6 +1,8 @@
 ## Photo Gallery
 An all-in-one PHP photo gallery script intended to be simply dropped into a directory of images. It lists all the images in a simple visual interface, as well as generating thumbnails of each photo to make the gallery load quickly and be quick on mobile.
 
+![Preview](preview.gif)
+
 ### Generating thumbnails.
 There are two methods of generating thumbnails:
 
