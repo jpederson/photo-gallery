@@ -1,4 +1,4 @@
-## Photo Gallery
+## PHP Photo Gallery
 An all-in-one PHP photo gallery script intended to be simply dropped into a directory of images. It lists all the images in a simple visual interface, as well as generating thumbnails of each photo to make the gallery load quickly.
 
 ![Preview](preview.gif)
