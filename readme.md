@@ -1,7 +1,7 @@
 ## Photo Gallery
-A simple all-in-one php photo gallery script intended to be simply dropped into a directory of images. It lists all the images in a simple visual interface, as well as generating thumbnails of each photo to make the gallery load quickly.
+A simple all-in-one php photo gallery script intended to be simply dropped into a directory of photos. It displays all the photos (jpg/jpeg only) in a simple visual interface, generating thumbnails on the fly to make the gallery load fast.
 
-145 lines of well-commented, clean php/html/css (no js).
+145 lines of clean, well-commented php/html/css (no js). Enjoy!
 
 ![Preview](preview.gif)
 
