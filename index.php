@@ -52,8 +52,8 @@ if ( !is_cli() ) {
 	}
 	
 	.photo {
-		float: left;
-		width: 50%;
+		width: 100%;
+		display: block;
 		background-size: cover;
 		background-position: center center;
 		box-sizing: border-box;
@@ -70,14 +70,16 @@ if ( !is_cli() ) {
 		-webkit-filter: grayscale(0%);
 		opacity: 1;
 	}
-
 	@media screen and ( min-width: 768px ) {
-		.photo { width: 33.3333%; }
+		.photo { float: left; width: 50%; }
 	}
 	@media screen and ( min-width: 1023px ) {
-		.photo { width: 25%; }
+		.photo { width: 33.3333%; }
 	}
 	@media screen and ( min-width: 1220px ) {
+		.photo { width: 25%; }
+	}
+	@media screen and ( min-width: 1440px ) {
 		.photo { width: 20%; }
 	}
 
@@ -120,7 +122,7 @@ if ( !empty( $photos ) ) {
 
 			// only generate a thumbnail if one doesn't already exist, logging if in cli
 			if ( !file_exists( $thumb ) ) {
-				make_thumb( $path, $thumb, 300 );
+				make_thumb( $path, $thumb, 500 );
 				if ( is_cli() ) print "Thumbnail created: " . str_replace( './', '', $thumb ) . "\n";
 			} else {
 				if ( is_cli() ) print "Thumbnail exists: " . str_replace( './', '', $thumb ) . "\n";
