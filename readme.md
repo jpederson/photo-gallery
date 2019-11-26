@@ -5,7 +5,9 @@ A simple all-in-one php photo gallery script intended to be simply dropped into 
 
 ![Preview](preview.gif)
 
-### Generating thumbnails.
+*****
+
+## Generating Thumbnails
 There are two methods of generating thumbnails:
 
 1. **Refresh the page several times** in a browser to generate thumbnails for a large number of images. This method is slower, and may take several refreshes, because the script may exceed the maximum execution time. Not to worry though, it skips images for which it has already created thumbnails, so each refresh, it just starts from the next image that needs a thumbnail, and will eventually make it through all the images.
