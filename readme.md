@@ -5,6 +5,8 @@ A simple all-in-one php photo gallery script intended to be simply dropped into 
 
 ![Preview](preview.gif)
 
+Live demo: http://gallery.jpederson.com
+
 *****
 
 ## Generating Thumbnails
