@@ -32,4 +32,9 @@ There are two methods of generating thumbnails:
 
 *****
 
+### Notes
+The only important thing to note is that any photos whose filenames begin with an underscore (`_`) are ignored by the script - when thumbnails are generated, they're saved to filenames beginning with an underscore, so you can manually override your thumbnails by saving versions of your photos with an underscore in front of their filename. Equally, if you'd like to regenerate the thumbnials, just delete the `_` version of the photo, and the script will detect that the thumbnail was deleted (on the next pageload or script execution) and regenerate the thumbnail for that photo.
+
+*****
+
 Developed with love by [James Pederson](https://jpederson.com).
