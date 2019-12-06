@@ -9,6 +9,21 @@ Live demo: http://gallery.jpederson.com
 
 *****
 
+### Quick Install (cli)
+To quickly install the script from the command line, navigate to the directory you'd like to install this script to (inside a folder of photos), and execute the following command.
+
+```
+curl -O https://raw.githubusercontent.com/jpederson/photo-gallery/master/index.php
+```
+
+And then, while you're in the command line, run the index.php file to generate all the thumbnails for this gallery. Continue reading to find out why php on the command line is preferred to using a web browser.
+
+```
+php index.php
+```
+
+*****
+
 ## Generating Thumbnails
 There are two methods of generating thumbnails:
 
