@@ -119,7 +119,7 @@ if ( !empty( $photos ) ) {
 		$ext = pathinfo( $path, PATHINFO_EXTENSION );
 
 			// only output tiles for image files.
-			if ( in_array( $ext, array( 'jpg', 'jpeg' ) ) && substr( $photo, 0, 1 ) != '_' ) { 
+			if ( in_array( strtolower($ext), array( 'jpg', 'jpeg' ) ) && substr( $photo, 0, 1 ) != '_' ) { 
 
 			// set the destination for the thumbnail file
 			$thumb = './_' . $photo;
