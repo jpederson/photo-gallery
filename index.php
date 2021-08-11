@@ -25,7 +25,7 @@ function make_thumb( $src, $dest, $desired_width ) {
 	imagecopyresampled( $virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height );
 	
 	/* create the physical thumbnail image to its destination */
-	imagejpeg( $virtual_image, $dest, 100 );
+	imagejpeg( $virtual_image, $dest, 60 );
 
 }
 
