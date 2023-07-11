@@ -11,7 +11,8 @@
 function make_thumb( $src, $dest, $desired_width ) {
 
     /* read the source image */
-    $source_image = imagecreatefromjpeg( $src );
+    $data = file_get_contents( $src );
+    $source_image = imagecreatefromstring( $data );
     $width = imagesx( $source_image );
     $height = imagesy( $source_image );
     
@@ -119,7 +120,7 @@ if ( !empty( $photos ) ) {
         $ext = pathinfo( $path, PATHINFO_EXTENSION );
 
             // only output tiles for image files.
-            if ( in_array( strtolower($ext), array( 'jpg', 'jpeg' ) ) && substr( $photo, 0, 1 ) != '_' ) { 
+            if ( in_array( strtolower($ext), array( 'jpg', 'jpeg', 'gif', 'png', 'webp', 'avif' ) ) && substr( $photo, 0, 1 ) != '_' ) { 
 
             // set the destination for the thumbnail file
             $thumb = './_' . $photo;
